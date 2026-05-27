@@ -18,38 +18,31 @@
    <li>将处理后的内容保存到一个新文件中，原文件保持不变。</li></ul>
 
 <h2>🔨 编译教程</h2>
-        <p>在运行程序前，你需要先将其编译为可执行文件。</p>
-        <ol>
-            <li><strong>安装 Go 环境</strong>
-                <p>访问 <a href="https://go.dev/dl/" target="_blank">Go 官方下载页面</a>，根据你的操作系统（Windows/macOS/Linux）下载并安装 Go。</p>
-            </li>
-            <li><strong>获取源代码</strong>
-                <p>将 <code>main.go</code> 文件保存到你的本地目录。</p>
-            </li>
-            <li><strong>打开终端/命令提示符</strong>
-                <p>进入存放 <code>main.go</code> 文件的目录。</p>
-            </li>
-            <li><strong>执行编译命令</strong>
-                <p>在终端中运行以下命令：</p>
-                <pre><code># 在 Windows 上编译，会生成 main.exe
+<p>在运行程序前，你需要先将其编译为可执行文件。</p>
+        <ol><li><strong>安装 Go 环境</strong>
+<p>访问 <a href="https://go.dev/dl/" target="_blank">Go 官方下载页面</a>，根据你的操作系统（Windows/macOS/Linux）下载并安装 Go。</p></li>
+<li><strong>获取源代码</strong>
+<p>将 <code>main.go</code> 文件保存到你的本地目录。</p></li>
+<li><strong>打开终端/命令提示符</strong>
+<p>进入存放 <code>main.go</code> 文件的目录。</p>
+</li>
+<li><strong>执行编译命令</strong>
+<p>在终端中运行以下命令：</p>
+<pre><code># 在 Windows 上编译，会生成 main.exe
 go build -o main.exe main.go
 
 # 在 macOS 或 Linux 上编译，会生成名为 main 的可执行文件
 go build -o main main.go</code></pre>
-                <p>编译成功后，当前目录下会生成一个可执行文件（<code>main</code> 或 <code>main.exe</code>）。</p>
-            </li>
-        </ol>
+<p>编译成功后，当前目录下会生成一个可执行文件（<code>main</code> 或 <code>main.exe</code>）。</p></li></ol>
 
-        <h2>🚀 使用方法</h2>
-        <p>编译完成后，在终端中使用以下命令格式运行程序：</p>
-        <pre><code>./main &lt;输入文件&gt; [输出文件]</code></pre>
-        <p><strong>参数说明：</strong></p>
-        <ul>
-            <li><code>&lt;输入文件&gt;</code>：<strong>必需。</strong> 你要处理的原始文本文件的路径（例如：<code>source.txt</code>）。</li>
-            <li><code>[输出文件]</code>：<strong>可选。</strong> 处理完成后新文件的保存路径。如果省略，程序会自动在输入文件名前加上 <code>modified_</code> 前缀（例如：输入 <code>list.txt</code>，则输出文件为 <code>modified_list.txt</code>）。</li>
-        </ul>
-
-        <h3>使用示例：</h3>
+<h2>🚀 使用方法</h2>
+<p>编译完成后，在终端中使用以下命令格式运行程序：</p>
+<pre><code>./main &lt;输入文件&gt; [输出文件]</code></pre>
+<p><strong>参数说明：</strong></p>
+<ul>
+<li><code>&lt;输入文件&gt;</code>：<strong>必需。</strong> 你要处理的原始文本文件的路径（例如：<code>source.txt</code>）。</li>
+<li><code>[输出文件]</code>：<strong>可选。</strong> 处理完成后新文件的保存路径。如果省略，程序会自动在输入文件名前加上 <code>modified_</code> 前缀（例如：输入 <code>list.txt</code>，则输出文件为 <code>modified_list.txt</code>）。</li></ul>
+ <h3>使用示例：</h3>
         <pre><code># 示例1：处理 input.txt，输出到默认文件 modified_input.txt
 ./main input.txt
 
