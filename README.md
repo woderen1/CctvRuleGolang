@@ -1,42 +1,23 @@
 # CctvRuleGolang
 ---
 
-<!DOCTYPE html>
-<html>
-<head>
-    <meta charset="utf-8">
-    <title>CNTV m3u8 链接处理工具 - README</title>
-    <style>
-        body { font-family: sans-serif; line-height: 1.6; max-width: 800px; margin: 0 auto; padding: 20px; color: #333; }
-        h1, h2 { color: #2c3e50; border-bottom: 1px solid #eee; padding-bottom: 5px; }
-        h1 { text-align: center; }
-        pre { background-color: #f5f5f5; padding: 15px; border-radius: 5px; overflow-x: auto; border: 1px solid #ddd; }
-        code { background-color: #f5f5f5; padding: 2px 4px; border-radius: 3px; font-family: monospace; }
-        .container { background-color: #fff; border-radius: 8px; box-shadow: 0 2px 10px rgba(0,0,0,0.05); padding: 30px; margin-top: 20px; }
-    </style>
-</head>
-<body>
-    <div class="container">
-        <h1>CNTV m3u8 链接处理工具</h1>
 
-        <h2>📖 项目描述</h2>
-        <p>这是一个用 Go 语言编写的命令行工具，用于批量处理包含特定央视网（CNTV）m3u8 视频流链接的文本文件。它可以将链接中的旧域名和路径格式，替换为新域名和路径格式。</p>
+  <h2>📖 项目描述</h2>
+  <p>这是一个用 Go 语言编写的命令行工具，用于批量处理包含特定央视网（CNTV）m3u8 视频流链接的文本文件。它可以将链接中的旧域名和路径格式，替换为新域名和路径格式。</p>
 
 <p><b>规则灵感来源 [https://www.cnblogs.com/luomocn/articles/18016493] </b></p>
 
-        <p>类似于其他央视网视频链接获取项目多是针对 Windows 和 macOS 的预编译包，本项目提供了源代码，可在任何能编译 Go 程序的平台上使用。没有提供预编译包是因为我比较懒 (～￣▽￣)～（Actions也懒得办呢</p>
+<p>类似于其他央视网视频链接获取项目多是针对 Windows 和 macOS 的预编译包，本项目提供了源代码，可在任何能编译 Go 程序的平台上使用。没有提供预编译包是因为我比较懒 (～￣▽￣)～（Actions也懒得办呢</p>
+<h2>✨ 功能</h2>
+   <ul>
+   <li>读取一个文本文件（如包含m3u8链接的网页源码或播放列表）。</li>
+   <li>使用正则表达式匹配特定格式的 CNTV m3u8 链接。</li>
+   <li>将匹配到的链接域名从 <code>dh5wswx02.v.cntv.cn</code> 替换为 <code>hls.cntv.lxdns.com</code>。</li>
+  <li>将路径从 <code>/asp/h5e/hls</code> 替换为 <code>/asp/hls</code>。</li>
+   <li>移除链接中的所有查询参数（<code>?</code> 之后的部分）。</li>
+   <li>将处理后的内容保存到一个新文件中，原文件保持不变。</li></ul>
 
-        <h2>✨ 功能</h2>
-        <ul>
-            <li>读取一个文本文件（如包含m3u8链接的网页源码或播放列表）。</li>
-            <li>使用正则表达式匹配特定格式的 CNTV m3u8 链接。</li>
-            <li>将匹配到的链接域名从 <code>dh5wswx02.v.cntv.cn</code> 替换为 <code>hls.cntv.lxdns.com</code>。</li>
-            <li>将路径从 <code>/asp/h5e/hls</code> 替换为 <code>/asp/hls</code>。</li>
-            <li>移除链接中的所有查询参数（<code>?</code> 之后的部分）。</li>
-            <li>将处理后的内容保存到一个新文件中，原文件保持不变。</li>
-        </ul>
-
-        <h2>🔨 编译教程</h2>
+<h2>🔨 编译教程</h2>
         <p>在运行程序前，你需要先将其编译为可执行文件。</p>
         <ol>
             <li><strong>安装 Go 环境</strong>
