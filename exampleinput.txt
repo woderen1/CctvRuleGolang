@@ -1,0 +1,3 @@
+第一集 = https://dh5wswx02.v.cntv.cn/asp/h5e/hls/850/0303000a/3/default/be59f53a0c5a44d2921866bcd29e1fb7/850.m3u8?maxbr=2048&contentid=15120519184043
+
+第十集 = https://dh5wswx02.v.cntv.cn/asp/h5e/hls/850/0303000a/3/default/3819f5bf6f854bf4bd9fe9d0c8ec0917/850.m3u8?maxbr=2000&contentid=15120519184043
