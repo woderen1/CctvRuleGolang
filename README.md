@@ -41,6 +41,7 @@ go build -o main main.go</code></pre>
 <p>编译成功后，当前目录下会生成一个可执行文件（<code>main</code> 或 <code>main.exe</code>）。</p></li></ol>
 
 <h2>🚀 使用方法</h2>
+<p>输入的txt文本文件示例可见 [./exampleinput.txt] </p>
 <p>编译完成后，在终端中使用以下命令格式运行程序：</p>
 <pre><code>./main &lt;输入文件&gt; [输出文件]</code></pre>
 <p><strong>参数说明：</strong></p>
