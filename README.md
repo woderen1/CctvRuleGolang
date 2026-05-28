@@ -1,6 +1,6 @@
 # CctvRuleGolang
 
-<p><span style="font-size: 3em; font-weight: bold; color: red;">央视网视频下载辅助–LinkGet[原理:通过将加密伪链接替换成可用链接辅助下载]</span></p>
+<p><span style="font-size: 3rem; font-weight: bold; color: red;">央视网视频下载辅助–LinkGet[原理:通过将加密伪链接替换成可用链接辅助下载]</span></p>
 
 <b>缺点:视频质量目前只能低些</b>
 
