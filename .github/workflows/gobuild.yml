@@ -1,0 +1,78 @@
+name: Build Multi-Platform Binaries
+
+on:
+  push:
+    tags:
+      - 'v*' # 仅在推送 v1.0.0 这样的标签时触发，方便版本发布
+  workflow_dispatch: # 允许手动触发
+
+jobs:
+  build:
+    name: Build and Release
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        # 定义需要编译的平台和架构组合
+        # os: [windows, linux, darwin] 
+        # arch: [386, amd64, arm64]
+        # 为了更清晰的分类，这里展开列出所有 9 种组合
+        include:
+          - goos: windows
+            goarch: 386
+            asset_name: main-windows-32bit.exe
+          - goos: windows
+            goarch: amd64
+            asset_name: main-windows-64bit.exe
+          - goos: windows
+            goarch: arm64
+            asset_name: main-windows-arm64.exe
+          
+          - goos: linux
+            goarch: 386
+            asset_name: main-linux-32bit
+          - goos: linux
+            goarch: amd64
+            asset_name: main-linux-64bit
+          - goos: linux
+            goarch: arm64
+            asset_name: main-linux-arm64
+          
+          - goos: darwin
+            goarch: amd64
+            asset_name: main-macos-64bit
+          - goos: darwin
+            goarch: arm64
+            asset_name: main-macos-arm64
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Set up Go
+        uses: actions/setup-go@v5
+        with:
+          go-version: '1.21' # 建议根据你的项目实际使用的 Go 版本进行调整
+
+      - name: Build
+        env:
+          GOOS: ${{ matrix.goos }}
+          GOARCH: ${{ matrix.goarch }}
+          CGO_ENABLED: 0 # 禁用 CGO 以确保静态编译，避免在不同系统上缺少依赖库
+        run: |
+          output_name="main"
+          if [ "${{ matrix.goos }}" = "windows" ]; then
+            output_name="main.exe"
+          fi
+          echo "Building for ${{ matrix.goos }}/${{ matrix.goarch }} -> Output: $output_name"
+          go build -o "$output_name" -ldflags="-s -w" .
+          # 校验文件是否生成成功
+          ls -lha
+
+      - name: Upload Artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: ${{ matrix.asset_name }}
+          path: |
+            ./main
+            ./main.exe
+          if-no-files-found: error
